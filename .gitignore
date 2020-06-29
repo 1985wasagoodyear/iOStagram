@@ -1,2 +1,6 @@
+# Dependency Manager Ignores - Build your own frameworks
 Carthage
 Pods
+
+# Hide my-own developer keys
+**/API+Constants.swift
