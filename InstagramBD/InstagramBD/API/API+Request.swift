@@ -12,5 +12,6 @@ import Foundation
 
 extension API {
     enum Request {
+        
     }
 }

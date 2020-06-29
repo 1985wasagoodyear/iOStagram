@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FD7E74624AA4FBA006351E4 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8374924AA419F0064F876 /* OAuthSwift.framework */; };
+		3FD7E74724AA4FBA006351E4 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8374924AA419F0064F876 /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3FD7E74D24AA5A48006351E4 /* API+Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7E74C24AA5A48006351E4 /* API+Credentials.swift */; };
 		3FE836FD24AA2EC80064F876 /* InstagramBD.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE836FB24AA2EC80064F876 /* InstagramBD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FE8372D24AA32DC0064F876 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8372C24AA32DC0064F876 /* API.swift */; };
 		3FE8372F24AA32F60064F876 /* API+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8372E24AA32F60064F876 /* API+Login.swift */; };
@@ -25,7 +28,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3FD7E74824AA4FBB006351E4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3FD7E74724AA4FBA006351E4 /* OAuthSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3FD7E74C24AA5A48006351E4 /* API+Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Credentials.swift"; sourceTree = "<group>"; };
 		3FE836F824AA2EC80064F876 /* InstagramBD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstagramBD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE836FB24AA2EC80064F876 /* InstagramBD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstagramBD.h; sourceTree = "<group>"; };
 		3FE836FC24AA2EC80064F876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +53,7 @@
 		3FE8373624AA34350064F876 /* InstagramBDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramBDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE8373824AA34350064F876 /* InstagramBDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramBDTests.swift; sourceTree = "<group>"; };
 		3FE8373A24AA34350064F876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FE8374924AA419F0064F876 /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = Carthage/Build/iOS/OAuthSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD7E74624AA4FBA006351E4 /* OAuthSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +76,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FD7E74E24AA5AD2006351E4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3FE8372C24AA32DC0064F876 /* API.swift */,
+				3FD7E74C24AA5A48006351E4 /* API+Credentials.swift */,
+				3FE8372E24AA32F60064F876 /* API+Login.swift */,
+				3FE8373024AA32FD0064F876 /* API+Request.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		3FE836EE24AA2EC80064F876 = {
 			isa = PBXGroup;
 			children = (
 				3FE836FA24AA2EC80064F876 /* InstagramBD */,
 				3FE8373724AA34350064F876 /* InstagramBDTests */,
 				3FE836F924AA2EC80064F876 /* Products */,
+				3FE8374224AA3FB80064F876 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				3FE836FB24AA2EC80064F876 /* InstagramBD.h */,
-				3FE8372C24AA32DC0064F876 /* API.swift */,
-				3FE8372E24AA32F60064F876 /* API+Login.swift */,
-				3FE8373024AA32FD0064F876 /* API+Request.swift */,
+				3FD7E74E24AA5AD2006351E4 /* API */,
 				3FE836FC24AA2EC80064F876 /* Info.plist */,
 			);
 			path = InstagramBD;
@@ -93,6 +123,14 @@
 				3FE8373A24AA34350064F876 /* Info.plist */,
 			);
 			path = InstagramBDTests;
+			sourceTree = "<group>";
+		};
+		3FE8374224AA3FB80064F876 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FE8374924AA419F0064F876 /* OAuthSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,6 +155,7 @@
 				3FE836F424AA2EC80064F876 /* Sources */,
 				3FE836F524AA2EC80064F876 /* Frameworks */,
 				3FE836F624AA2EC80064F876 /* Resources */,
+				3FD7E74824AA4FBB006351E4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,6 +247,7 @@
 				3FE8372F24AA32F60064F876 /* API+Login.swift in Sources */,
 				3FE8372D24AA32DC0064F876 /* API.swift in Sources */,
 				3FE8373124AA32FD0064F876 /* API+Request.swift in Sources */,
+				3FD7E74D24AA5A48006351E4 /* API+Credentials.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +399,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = InstagramBD/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -385,6 +430,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = InstagramBD/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

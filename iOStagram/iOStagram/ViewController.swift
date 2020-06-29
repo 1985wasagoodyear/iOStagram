@@ -13,11 +13,16 @@ import InstagramBD
 
 class ViewController: UIViewController {
 
+    let creds: API.Credentials = .secret
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        guard let url = creds.makeUrl() else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:])
     }
-
+    
 
 }
 

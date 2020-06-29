@@ -9,8 +9,8 @@
 //
 
 import Foundation
+import OAuthSwift
 
-enum API {
+public enum API {
     static let root = "https://api.instagram.com"
 }
-
