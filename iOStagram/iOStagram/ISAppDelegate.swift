@@ -9,14 +9,20 @@
 //
 
 import UIKit
+import BasicKeychain
+
 
 @UIApplicationMain
 final class ISAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let mainCoordinator = SignInCoordinator()
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        mainCoordinator.window = window
+        mainCoordinator.start()
         return true
     }
 

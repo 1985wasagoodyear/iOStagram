@@ -11,6 +11,9 @@
 import OAuthSwift
 
 extension Dictionary where Key == String, Value == String {
+    // transforms a dictionary into the form:
+    // "key1=value1&key2=value2&key3=value3"
+    // and then transforms into ascii-encoded data
     func encoded() -> Data? {
         map { $0 + "=" + $1 }
             .joined(separator: "&")
@@ -19,7 +22,7 @@ extension Dictionary where Key == String, Value == String {
 }
 
 extension API {
-    enum Login { }
+    public enum Login { }
     struct SignIn {
         let credentials: Credentials
         let oauth: OAuthSwift
@@ -45,37 +48,7 @@ extension API.Login {
     enum Authorize { }
 }
 
-extension API.Login.AccessToken {
-    public static func urlRequest(clientId: String,
-                                  clientSecret: String,
-                                  grantType: String,
-                                  redirectUri: String,
-                                  code: String) -> URLRequest? {
-        guard let url = URL(string: API.root + "/oauth/access_token") else {
-            return nil
-        }
-        var request = URLRequest(url: url,
-                                 cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
-                                 timeoutInterval: 1.0)
-        let body = [
-            "client_id": clientId,
-            "client_secret": clientSecret,
-            "grant_type": grantType,
-            "redirect_uri": redirectUri,
-            "code": code
-            ].encoded()
-        
-        request.httpMethod = "POST"
-        request.setValue("application/x-www-form-urlencoded",
-                         forHTTPHeaderField:"Content-Type")
-        request.setValue(String(body?.count ?? 0),
-                         forHTTPHeaderField: "Content-Length")
-        request.setValue("application/json",
-                         forHTTPHeaderField:"Accept")
-        request.httpBody = body
-        return request
-    }
-}
+
 
 extension API.Login.Authorize {
     

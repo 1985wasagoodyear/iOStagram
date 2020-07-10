@@ -14,3 +14,14 @@ import OAuthSwift
 public enum API {
     static let root = "https://api.instagram.com"
 }
+
+// TODO: - Move this internal once WebView is moved internally
+public struct IGAccessTokenResponse: Decodable {
+    public let userId: Int
+    public let accessToken: String
+    
+    enum CodingKeys: String, CodingKey {
+        case userId = "user_id"
+        case accessToken = "access_token"
+    }
+}

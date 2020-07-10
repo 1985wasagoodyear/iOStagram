@@ -24,14 +24,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
     }
     
     private func addImageView() {
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(imageView)
-        let constraints = [
-            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-        ]
-        NSLayoutConstraint.activate(constraints)
+        imageView.fillIn(contentView)
     }
 }

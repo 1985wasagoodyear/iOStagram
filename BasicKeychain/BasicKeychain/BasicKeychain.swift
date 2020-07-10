@@ -20,6 +20,10 @@ open class BasicKeychain {
     
     public init(name: String, service: String, accessGroup: String? = nil) {
         self.name = name
+        let defaults = BasicKeychainDefaults()
+        if defaults.checkSecurityFirstUseFlag(service: service) == true {
+            try? BasicKeychain.deleteAll(service: service)
+        }
         item = KeychainPasswordItem(service: service,
                                     account: name,
                                     accessGroup: accessGroup)
@@ -28,15 +32,15 @@ open class BasicKeychain {
     // MARK: - Accessors
     
     open func set(_ value: String) throws {
-        item.savePassword(password)
+        try item.savePassword(value)
     }
     
-    open func get() -> String? throws {
-        item.readPassword()
+    open func get() throws -> String? {
+        try item.readPassword()
     }
     
     open func delete() throws {
-        item.deleteItem()
+        try item.deleteItem()
     }
     
     // MARK: - Class Accessor
@@ -45,7 +49,7 @@ open class BasicKeychain {
         try KeychainPasswordItem
             .passwordItems(forService: service)
             .forEach {
-                $0.deleteItem()
+                try $0.deleteItem()
             }
     }
     

@@ -66,5 +66,4 @@ extension API.Credentials {
     }
     
 }
-}
 

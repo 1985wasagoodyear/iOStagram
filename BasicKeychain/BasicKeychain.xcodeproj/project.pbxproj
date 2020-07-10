@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F55B2E224B8F097001305AA /* BasicKeychainDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2E124B8F097001305AA /* BasicKeychainDefaults.swift */; };
 		3FE8371F24AA302C0064F876 /* BasicKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE8371D24AA302C0064F876 /* BasicKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FE8372824AA30330064F876 /* BasicKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8372524AA30320064F876 /* BasicKeychain.swift */; };
 		3FE8372A24AA30330064F876 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8372724AA30320064F876 /* KeychainPasswordItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F55B2E124B8F097001305AA /* BasicKeychainDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicKeychainDefaults.swift; sourceTree = "<group>"; };
 		3FE8371A24AA302C0064F876 /* BasicKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasicKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE8371D24AA302C0064F876 /* BasicKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicKeychain.h; sourceTree = "<group>"; };
 		3FE8371E24AA302C0064F876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +33,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F55B2E024B8F08B001305AA /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				3F55B2E124B8F097001305AA /* BasicKeychainDefaults.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		3FE8371024AA302B0064F876 = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +62,7 @@
 			children = (
 				3FE8372B24AA30460064F876 /* Keychain */,
 				3FE8372524AA30320064F876 /* BasicKeychain.swift */,
+				3F55B2E024B8F08B001305AA /* UserDefaults */,
 				3FE8371D24AA302C0064F876 /* BasicKeychain.h */,
 				3FE8371E24AA302C0064F876 /* Info.plist */,
 			);
@@ -146,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F55B2E224B8F097001305AA /* BasicKeychainDefaults.swift in Sources */,
 				3FE8372824AA30330064F876 /* BasicKeychain.swift in Sources */,
 				3FE8372A24AA30330064F876 /* KeychainPasswordItem.swift in Sources */,
 			);
@@ -285,6 +297,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = BasicKeychain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +323,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = BasicKeychain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
