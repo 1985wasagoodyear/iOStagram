@@ -28,7 +28,7 @@ extension API.Login.AccessToken {
             "grant_type": grantType,
             "redirect_uri": redirectUri,
             "code": code
-            ].encoded()
+            ].urlEncoded()
         
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded",

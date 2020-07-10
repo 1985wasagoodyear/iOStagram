@@ -29,9 +29,13 @@ public final class IGLoginViewController: UIViewController {
     }()
 
     let credentials: API.Credentials
+    let completion: (Error?) -> Void
     
-    public init(credentials: API.Credentials) {
+    /// TODO: - something about `completion` not being thread-safe
+    public init(credentials: API.Credentials,
+                completion: @escaping (Error?) -> Void) {
         self.credentials = credentials
+        self.completion = completion
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -55,28 +59,42 @@ extension IGLoginViewController: WKNavigationDelegate {
                  decidePolicyFor navigationAction: WKNavigationAction,
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let requestUrl = navigationAction.request.url,
-            let redirectUrl = credentials.makeRedirect(from: requestUrl) {
+            let redirectRequest = credentials.makeRedirect(from: requestUrl) {
             decisionHandler(.cancel)
-            URLSession.shared.dataTask(with: redirectUrl) { data, response, error in
-                print(data ?? response ?? error ?? "huh")
-                // once token is received, return user to normal flow and use for other things...
-                guard let data = data else {
-                    // TODO: - Toss an Error here
-                    print("toss an error here")
-                    return
-                }
-                let decoder = JSONDecoder()
-                let tokenResponse = try! decoder.decode(IGAccessTokenResponse.self, from: data)
-                print(tokenResponse)
-                
-                let keychainItem = BasicKeychain(name: "yu.iOStagram",
-                                                 service: "accessToken")
-                try? keychainItem.set(tokenResponse.accessToken)
-                
-            }.resume()
+            self.fetchAccessToken(redirectRequest: redirectRequest)
             return
         }
         decisionHandler(.allow)
+    }
+
+    func fetchAccessToken(redirectRequest: URLRequest) {
+        URLSession.shared.dataTask(with: redirectRequest) { [weak self] data, response, error in
+            let completion = self?.completion
+            if let error = error {
+                completion?(error)
+                return
+            }
+            guard let data = data else {
+                // TODO: - Toss an Error here
+                print("toss an error here")
+                completion?(nil)
+                return
+            }
+            do {
+                try self?.parseAndSaveToken(from: data)
+                completion?(nil)
+            } catch {
+                completion?(error)
+            }
+        }.resume()
+    }
+    
+    func parseAndSaveToken(from data: Data) throws {
+        let decoder = JSONDecoder()
+        let tokenResponse = try decoder.decode(IGAccessTokenResponse.self, from: data)
+        let keychainItem = BasicKeychain(name: "yu.iOStagram",
+                                         service: "accessToken")
+        try? keychainItem.set(tokenResponse.accessToken)
     }
 }
 

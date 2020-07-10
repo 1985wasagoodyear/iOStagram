@@ -60,21 +60,21 @@
 		3FE8371C24AA302C0064F876 /* BasicKeychain */ = {
 			isa = PBXGroup;
 			children = (
-				3FE8372B24AA30460064F876 /* Keychain */,
-				3FE8372524AA30320064F876 /* BasicKeychain.swift */,
 				3F55B2E024B8F08B001305AA /* UserDefaults */,
+				3FE8372B24AA30460064F876 /* GenericKeychain */,
+				3FE8372524AA30320064F876 /* BasicKeychain.swift */,
 				3FE8371D24AA302C0064F876 /* BasicKeychain.h */,
 				3FE8371E24AA302C0064F876 /* Info.plist */,
 			);
 			path = BasicKeychain;
 			sourceTree = "<group>";
 		};
-		3FE8372B24AA30460064F876 /* Keychain */ = {
+		3FE8372B24AA30460064F876 /* GenericKeychain */ = {
 			isa = PBXGroup;
 			children = (
 				3FE8372724AA30320064F876 /* KeychainPasswordItem.swift */,
 			);
-			path = Keychain;
+			path = GenericKeychain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

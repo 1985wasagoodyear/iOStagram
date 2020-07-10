@@ -9,20 +9,7 @@
 //
 
 import UIKit
-import BasicKeychain
 import InstagramBD
-
-enum Storyboards: String {
-    case main = "Main"
-    func instantiate<ViewController: UIViewController>(named name: String) -> ViewController {
-        let storyboard = UIStoryboard(name: rawValue,
-                                      bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: name) as? ViewController else {
-            fatalError("ViewController named: '\(name)' not found on Storyboard '\(rawValue)'")
-        }
-        return viewController
-    }
-}
 
 final class SignInCoordinator {
     var window: UIWindow?
@@ -35,15 +22,20 @@ final class SignInCoordinator {
     }
     
     func createInitialViewController() -> UIViewController {
-        let keychainItem = BasicKeychain(name: "yu.iOStagram",
-                                         service: "accessToken")
         let initialVC: UIViewController
         let storyboard = Storyboards.main
-        if let accessToken = try? keychainItem.get() {
+        if API.hasToken {
             initialVC = storyboard.instantiate(named: "GalleryViewController")
         } else {
-            initialVC = IGLoginViewController(credentials: API.Credentials.secret)
+            initialVC = Storyboards.makeSignInViewController(coordinator: self)
         }
         return initialVC
     }
+    
+    func gotoSignedInExperience() {
+        let signedInVC = Storyboards.main.instantiate(named: "GalleryViewController")
+        window?.rootViewController = signedInVC
+        window?.makeKeyAndVisible()
+    }
+    
 }

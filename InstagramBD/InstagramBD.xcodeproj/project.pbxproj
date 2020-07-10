@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F24B4EF24B8C92300D4CE10 /* API+AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24B4EE24B8C92300D4CE10 /* API+AccessToken.swift */; };
 		3F55B2C224B8EDDA001305AA /* IGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2C124B8EDDA001305AA /* IGLoginViewController.swift */; };
+		3F55B2E624B8F7EF001305AA /* API+Login+Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2E524B8F7EF001305AA /* API+Login+Deprecated.swift */; };
 		3FD7E74624AA4FBA006351E4 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8374924AA419F0064F876 /* OAuthSwift.framework */; };
 		3FD7E74724AA4FBA006351E4 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8374924AA419F0064F876 /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FD7E74D24AA5A48006351E4 /* API+Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7E74C24AA5A48006351E4 /* API+Credentials.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		3F24B4EE24B8C92300D4CE10 /* API+AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+AccessToken.swift"; sourceTree = "<group>"; };
 		3F55B2C124B8EDDA001305AA /* IGLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGLoginViewController.swift; sourceTree = "<group>"; };
+		3F55B2E524B8F7EF001305AA /* API+Login+Deprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Login+Deprecated.swift"; sourceTree = "<group>"; };
 		3FD7E74C24AA5A48006351E4 /* API+Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Credentials.swift"; sourceTree = "<group>"; };
 		3FE836F824AA2EC80064F876 /* InstagramBD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstagramBD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE836FB24AA2EC80064F876 /* InstagramBD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstagramBD.h; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				3F55B2C124B8EDDA001305AA /* IGLoginViewController.swift */,
 				3FE8372E24AA32F60064F876 /* API+Login.swift */,
 				3F24B4ED24B8C91800D4CE10 /* AccessToken */,
+				3F55B2E524B8F7EF001305AA /* API+Login+Deprecated.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				3FE8373124AA32FD0064F876 /* API+Request.swift in Sources */,
 				3F55B2C224B8EDDA001305AA /* IGLoginViewController.swift in Sources */,
 				3FD7E74D24AA5A48006351E4 /* API+Credentials.swift in Sources */,
+				3F55B2E624B8F7EF001305AA /* API+Login+Deprecated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

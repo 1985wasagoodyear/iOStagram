@@ -13,17 +13,17 @@ open class BasicKeychain {
     
     // MARK: - Properties
     
+    public static var wipeKeychainOnStart: Bool = true
+    
     public let name: String
     private let item: KeychainPasswordItem
     
     // MARK: - Init
     
+    // TODO: -  annotate what 'name', 'service', and 'accessGroup' mean
     public init(name: String, service: String, accessGroup: String? = nil) {
         self.name = name
-        let defaults = BasicKeychainDefaults()
-        if defaults.checkSecurityFirstUseFlag(service: service) == true {
-            try? BasicKeychain.deleteAll(service: service)
-        }
+        try? BasicKeychain.clearItemsIfNeeded(for: service)
         item = KeychainPasswordItem(service: service,
                                     account: name,
                                     accessGroup: accessGroup)
@@ -51,6 +51,15 @@ open class BasicKeychain {
             .forEach {
                 try $0.deleteItem()
             }
+    }
+    
+    /// clears Keychain if this is a fresh install of the app
+    class func clearItemsIfNeeded(for service: String) throws {
+        guard BasicKeychain.wipeKeychainOnStart == true else { return }
+        let defaults = BasicKeychainDefaults()
+        if defaults.checkSecurityFirstUseFlag(service: service) == true {
+            try BasicKeychain.deleteAll(service: service)
+        }
     }
     
 }
