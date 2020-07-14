@@ -17,17 +17,20 @@ extension API {
         let callbackUrl: String
         let scope: String
         let responseType: String
+        let session: URLSession
         
         public init(key: String,
                     secret: String,
                     callbackUrl: String,
                     scope: String = "user_profile,user_media",
-                    responseType: String = "code") {
+                    responseType: String = "code",
+                    session: URLSession = URLSession(configuration: .ephemeral)) {
             self.key = key
             self.secret = secret
             self.callbackUrl = callbackUrl
             self.scope = scope
             self.responseType = responseType
+            self.session = session
         }
     }
 }

@@ -33,7 +33,6 @@ final class GalleryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // fetchData()
         fetchName()
     }
     
@@ -43,7 +42,11 @@ final class GalleryViewController: UIViewController {
             return
         }
         currentOption = selection
-        //fetchData()
+        if selection == .enhanceIT {
+            fetchData()
+        } else {
+            self.items = []
+        }
     }
     
     func fetchData() {
@@ -74,8 +77,6 @@ final class GalleryViewController: UIViewController {
         }
     }
     
-    
-    
 }
 
 extension GalleryViewController: UICollectionViewDataSource {
@@ -87,16 +88,8 @@ extension GalleryViewController: UICollectionViewDataSource {
         let cell: ImageCollectionViewCell = collectionView.dequeue(reuseId: Constants.cellReuseId,
                                                                    for: indexPath)
         imageService.downloadImage(items[indexPath.row]) { (data) in
-            DispatchQueue.main.async {
-                guard let data = data else {
-                    cell.imageView.image = nil
-                    return
-                }
-                let image = UIImage(data: data)
-                cell.imageView.image = image
-            }
+            cell.imageView.setImage(data: data, clearIfNil: true) 
         }
-        
         return cell
     }
     

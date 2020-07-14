@@ -10,6 +10,7 @@
 
 import Foundation
 
+/// Represents the `api.instagram.com` endpoints.
 public enum API {
     static let root = "https://api.instagram.com"
 }

@@ -17,6 +17,7 @@ public final class IGLoginViewController: UIViewController {
     
     lazy var config: WKWebViewConfiguration = {
         let config = WKWebViewConfiguration()
+        // do more setup for config here?
         return config
     }()
     
@@ -68,7 +69,7 @@ extension IGLoginViewController: WKNavigationDelegate {
     }
 
     func fetchAccessToken(redirectRequest: URLRequest) {
-        URLSession.shared.dataTask(with: redirectRequest) { [weak self] data, response, error in
+        credentials.session.dataTask(with: redirectRequest) { [weak self] data, response, error in
             let completion = self?.completion
             if let error = error {
                 completion?(.failure(error))
