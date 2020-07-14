@@ -23,17 +23,19 @@ final class SignInCoordinator {
     
     func createInitialViewController() -> UIViewController {
         let initialVC: UIViewController
-        let storyboard = Storyboards.main
-        if API.hasToken {
-            initialVC = storyboard.instantiate(named: "GalleryViewController")
+        if let user = try? InstaUser() {
+            let signedInVC: GalleryViewController = Storyboards.main.instantiate(named: "GalleryViewController")
+            signedInVC.user = user
+            initialVC = signedInVC
         } else {
             initialVC = Storyboards.makeSignInViewController(coordinator: self)
         }
         return initialVC
     }
     
-    func gotoSignedInExperience() {
-        let signedInVC = Storyboards.main.instantiate(named: "GalleryViewController")
+    func gotoSignedInExperience(user: InstaUser) {
+        let signedInVC: GalleryViewController = Storyboards.main.instantiate(named: "GalleryViewController")
+        signedInVC.user = user
         window?.rootViewController = signedInVC
         window?.makeKeyAndVisible()
     }

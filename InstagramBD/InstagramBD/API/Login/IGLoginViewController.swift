@@ -29,11 +29,11 @@ public final class IGLoginViewController: UIViewController {
     }()
 
     let credentials: API.Credentials
-    let completion: (Error?) -> Void
+    let completion: (Result<InstaUser, Error>) -> Void
     
     /// TODO: - something about `completion` not being thread-safe
     public init(credentials: API.Credentials,
-                completion: @escaping (Error?) -> Void) {
+                completion: @escaping (Result<InstaUser, Error>) -> Void) {
         self.credentials = credentials
         self.completion = completion
         super.init(nibName: nil, bundle: nil)
@@ -71,30 +71,29 @@ extension IGLoginViewController: WKNavigationDelegate {
         URLSession.shared.dataTask(with: redirectRequest) { [weak self] data, response, error in
             let completion = self?.completion
             if let error = error {
-                completion?(error)
+                completion?(.failure(error))
                 return
             }
             guard let data = data else {
-                // TODO: - Toss an Error here
-                print("toss an error here")
-                completion?(nil)
+                completion?(.failure(AccessTokenError.noData))
                 return
             }
             do {
-                try self?.parseAndSaveToken(from: data)
-                completion?(nil)
+                let decoder = JSONDecoder()
+                let response =  try decoder.decode(API.Login.AccessToken.Response.self,
+                                          from: data)
+                let user = try InstaUser(response)
+                completion?(.success(user))
             } catch {
-                completion?(error)
+                completion?(.failure(error))
             }
         }.resume()
     }
     
-    func parseAndSaveToken(from data: Data) throws {
-        let decoder = JSONDecoder()
-        let tokenResponse = try decoder.decode(IGAccessTokenResponse.self, from: data)
-        let keychainItem = BasicKeychain(name: "yu.iOStagram",
-                                         service: "accessToken")
-        try? keychainItem.set(tokenResponse.accessToken)
-    }
 }
 
+public extension IGLoginViewController {
+    enum AccessTokenError: Error {
+        case noData
+    }
+}

@@ -35,18 +35,23 @@ final class SignInViewController: UIViewController {
         present(loginVC, animated: true)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
 }
 
 // MARK: - Navigation Methods
 
 extension SignInViewController {
-    func handleLogin(error: Error?) {
-        if let error = error {
+    func handleLogin(response: Result<InstaUser, Error>) {
+        switch response {
+        case .failure(let error):
             handleError(error: error)
-            return
-        }
-        DispatchQueue.main.async { [weak self] in
-            self?.coordinator?.gotoSignedInExperience()
+        case .success(let user):
+            DispatchQueue.main.async { [weak self] in
+                self?.coordinator?.gotoSignedInExperience(user: user)
+            }
         }
     }
 }

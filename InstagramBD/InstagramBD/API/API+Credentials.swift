@@ -34,7 +34,7 @@ extension API {
 
 extension API.Credentials {
     
-    public func makeUrl() -> URL? {
+    func makeUrl() -> URL? {
         API.Login
             .Authorize
             .url(clientId: key,
@@ -43,7 +43,7 @@ extension API.Credentials {
                  responseType: responseType)
     }
     
-    public func makeRedirect(from url: URL) -> URLRequest? {
+    func makeRedirect(from url: URL) -> URLRequest? {
         guard let code = API.Credentials.parse(prefix: "code", from: url) else {
             return nil
         }

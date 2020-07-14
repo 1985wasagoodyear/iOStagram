@@ -11,7 +11,8 @@
 import Foundation
 
 extension API.Login.AccessToken {
-    public static func urlRequest(clientId: String,
+
+    static func urlRequest(clientId: String,
                                   clientSecret: String,
                                   grantType: String,
                                   redirectUri: String,
