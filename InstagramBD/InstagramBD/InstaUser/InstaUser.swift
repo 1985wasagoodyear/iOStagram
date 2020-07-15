@@ -21,6 +21,10 @@ public class InstaUser {
         try? InstaUser.accessTokenKeychain().get()
     }
     
+    private lazy var request: Graph.Request = {
+        Graph.Request(user: self)
+    }()
+    
     internal init(_ apiResponse: API.Login.AccessToken.Response) throws {
         try InstaUser.accessTokenKeychain().set(apiResponse.accessToken)
         let userId = String(apiResponse.userId)
@@ -29,12 +33,11 @@ public class InstaUser {
     }
     
     public init() throws {
-        guard let userId = try InstaUser.userIdKeychain().get() else { fatalError("error")
+        guard let userId = try InstaUser.userIdKeychain().get() else {
+            // do something else here?
+            throw NSError(domain: "InstaUser credentials not found", code: 1, userInfo: nil)
         }
         self.userId = userId
-        if try InstaUser.accessTokenKeychain().get() == nil {
-            fatalError("error")
-        }
     }
 }
 
@@ -46,7 +49,7 @@ extension InstaUser {
     static func userIdKeychain() -> BasicKeychain {
         BasicKeychain(name: "yu.iOStagram",
                       service: "userId")
-        
+
     }
 }
 
@@ -58,7 +61,6 @@ public extension InstaUser {
             completion(name)
             return
         }
-        let request = Graph.Request(user: self)
         request.userName { result in
             switch result {
             case .success(let name):

@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import CommonUtility
 
 class ImageCollectionViewCell: UICollectionViewCell {
     let imageView: UIImageView = UIImageView()

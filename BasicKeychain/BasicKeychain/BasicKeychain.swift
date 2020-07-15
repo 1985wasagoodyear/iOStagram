@@ -45,7 +45,7 @@ open class BasicKeychain {
     
     // MARK: - Class Accessor
     
-    class func deleteAll(service: String) throws {
+    class open func deleteAll(service: String) throws {
         try KeychainPasswordItem
             .passwordItems(forService: service)
             .forEach {
@@ -54,7 +54,7 @@ open class BasicKeychain {
     }
     
     /// clears Keychain if this is a fresh install of the app
-    class func clearItemsIfNeeded(for service: String) throws {
+    class open func clearItemsIfNeeded(for service: String) throws {
         guard BasicKeychain.wipeKeychainOnStart == true else { return }
         let defaults = BasicKeychainDefaults()
         if defaults.checkSecurityFirstUseFlag(service: service) == true {
