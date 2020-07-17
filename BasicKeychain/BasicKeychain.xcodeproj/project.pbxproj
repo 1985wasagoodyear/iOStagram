@@ -13,26 +13,8 @@
 		3FE8372A24AA30330064F876 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8372724AA30320064F876 /* KeychainPasswordItem.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3FA8899924BE51D100C70C87 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3FA8899424BE51D100C70C87 /* CommonUtility.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3F55B2CD24B8EDFE001305AA;
-			remoteInfo = CommonUtility;
-		};
-		3FA8899B24BE51D100C70C87 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3FA8899424BE51D100C70C87 /* CommonUtility.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3FA8896024BE26B000C70C87;
-			remoteInfo = CommonUtilityTests;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		3F55B2E124B8F097001305AA /* BasicKeychainDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicKeychainDefaults.swift; sourceTree = "<group>"; };
-		3FA8899424BE51D100C70C87 /* CommonUtility.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonUtility.xcodeproj; path = ../CommonUtility/CommonUtility.xcodeproj; sourceTree = "<group>"; };
 		3FE8371A24AA302C0064F876 /* BasicKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasicKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE8371D24AA302C0064F876 /* BasicKeychain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicKeychain.h; sourceTree = "<group>"; };
 		3FE8371E24AA302C0064F876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,19 +41,9 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
-		3FA8899524BE51D100C70C87 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3FA8899A24BE51D100C70C87 /* CommonUtility.framework */,
-				3FA8899C24BE51D100C70C87 /* CommonUtilityTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3FE8371024AA302B0064F876 = {
 			isa = PBXGroup;
 			children = (
-				3FA8899424BE51D100C70C87 /* CommonUtility.xcodeproj */,
 				3FE8371C24AA302C0064F876 /* BasicKeychain */,
 				3FE8371B24AA302C0064F876 /* Products */,
 			);
@@ -163,35 +135,12 @@
 			mainGroup = 3FE8371024AA302B0064F876;
 			productRefGroup = 3FE8371B24AA302C0064F876 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 3FA8899524BE51D100C70C87 /* Products */;
-					ProjectRef = 3FA8899424BE51D100C70C87 /* CommonUtility.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				3FE8371924AA302C0064F876 /* BasicKeychain */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		3FA8899A24BE51D100C70C87 /* CommonUtility.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CommonUtility.framework;
-			remoteRef = 3FA8899924BE51D100C70C87 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3FA8899C24BE51D100C70C87 /* CommonUtilityTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CommonUtilityTests.xctest;
-			remoteRef = 3FA8899B24BE51D100C70C87 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3FE8371824AA302C0064F876 /* Resources */ = {
