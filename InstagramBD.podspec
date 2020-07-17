@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
     s.platform          = :ios
     s.source            = { :git => "https://github.com/1985wasagoodyear/iOStagram", :tag => "1.0.0" }
           
-    s.source_files     = "BasicKeychain/**/*.{h,m,swift}", "CommonUtility/**/*.{h,m,swift}", "iOStagram/**/*.{h,m,swift}"
+    s.source_files     = "BasicKeychain/**/*.{h,m,swift}", "CommonUtility/**/*.{h,m,swift}", "InstagramBD/**/*.{h,m,swift}"
 
 end  
