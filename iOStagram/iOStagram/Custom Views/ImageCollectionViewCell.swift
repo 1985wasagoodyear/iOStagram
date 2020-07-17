@@ -25,6 +25,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     }
     
     private func addImageView() {
+        imageView.contentMode = .scaleAspectFit
         imageView.fillIn(contentView)
     }
 }

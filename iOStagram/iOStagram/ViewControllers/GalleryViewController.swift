@@ -19,14 +19,22 @@ final class GalleryViewController: UIViewController {
         didSet {
             guard let collectionView = collectionView else { return }
             collectionView.dataSource = self
+            collectionView.delegate = self
         }
+    }
+    var cellSize: CGSize {
+        let width = ((collectionView.frame.size.width - (Constants.margin * 4.0)) / CGFloat(Constants.itemsPerRow)).rounded()
+        return CGSize(width: width, height: width)
     }
     
     var items: [URL] = [] {
         didSet {
-            collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
+    
     var currentOption: SegmentOptions = .mine
     var user: InstaUser!
     var imageService = ImageDownloadService()
@@ -34,6 +42,7 @@ final class GalleryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchName()
+        fetchMedia()
     }
     
     @IBAction func optionSegmentedControlAction(_ sender: UISegmentedControl) {
@@ -42,13 +51,15 @@ final class GalleryViewController: UIViewController {
             return
         }
         currentOption = selection
+        items.removeAll(keepingCapacity: true)
         if selection == .enhanceIT {
             fetchData()
         } else {
-            self.items = []
+            fetchMedia()
         }
     }
     
+    // MARK: TODO - adjust fetch data functionality here...
     func fetchData() {
         let url = URL(string: "https://www.instagram.com/enhanceitcommunity/")!
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -61,19 +72,25 @@ final class GalleryViewController: UIViewController {
                 return
             }
             let links = Crawler.findLinks(from: string)
-            DispatchQueue.main.async {
-                self.items = links.filter { $0.absoluteString.contains("s150x150") }
-            }
+            self.items = links.filter { $0.absoluteString.contains("s150x150") }
         }.resume()
     }
     
     func fetchName() {
-        // fetch data for the option
-        user.getMedia { name in
+        user.getName { name in
             DispatchQueue.main.async {
-                self.title = name
-                self.optionSegmentedControl.setTitle(name, forSegmentAt: 0)
+                let title = name ?? "Mine"
+                self.title = title
+                self.optionSegmentedControl.setTitle(title, forSegmentAt: 0)
             }
+        }
+    }
+    
+    func fetchMedia() {
+        user.getMedia { medias in
+            self.items = medias
+                .getImageMedias()
+                .compactMap { $0.url }
         }
     }
     
@@ -87,17 +104,47 @@ extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ImageCollectionViewCell = collectionView.dequeue(reuseId: Constants.cellReuseId,
                                                                    for: indexPath)
-        imageService.downloadImage(items[indexPath.row]) { (data) in
-            cell.imageView.setImage(data: data, clearIfNil: true) 
+        imageService.downloadImage(items[indexPath.row], forSize: cellSize) { (image) in
+            cell.imageView.setImage(image: image, clearIfNil: true)
         }
         return cell
     }
     
 }
 
+extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return cellSize
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return Constants.margin
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat{
+        return Constants.margin
+    }
+
+}
+
 extension GalleryViewController {
     enum Constants {
         static let cellReuseId = "ImageCollectionViewCell"
+        static let margin: CGFloat = 3.0
+        static let itemsPerRow: Int = 3
     }
     
     enum SegmentOptions: Int {

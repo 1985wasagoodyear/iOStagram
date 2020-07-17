@@ -43,6 +43,11 @@ public class InstaUser {
         self.userId = userId
         self.credentials = credentials
     }
+    
+    public func signout() {
+        try? InstaUser.accessTokenKeychain().delete()
+        try? InstaUser.userIdKeychain().delete()
+    }
 }
 
 extension InstaUser {
@@ -64,7 +69,7 @@ extension InstaUser {
 
 public extension InstaUser {
 
-    func getName(_ completion: @escaping (String) -> Void) {
+    func getName(_ completion: @escaping (String?) -> Void) {
         if let name = name {
             completion(name)
             return
@@ -74,24 +79,23 @@ public extension InstaUser {
             case .success(let name):
                 self.name = name
                 completion(name)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
+            case .failure:
+                print("TODO: - handle some username request failure here")
+                // fatalError(error.localizedDescription)
+                completion(nil)
             }
         }
     }
     
-    func getMedia(_ completion: @escaping (String) -> Void) {
-        if let name = name {
-            completion(name)
-            return
-        }
+    func getMedia(_ completion: @escaping ([MediaInfo]) -> Void) {
         request.media { result in
             switch result {
-            case .success(let name):
-                self.name = name
-                completion(name)
-            case .failure(let error):
-                fatalError(error.localizedDescription)
+            case .success(let infos):
+                completion(infos)
+            case .failure:
+                print("TODO: - handle some media request failure here")
+                // fatalError(error.localizedDescription)
+                completion([])
             }
         }
     }

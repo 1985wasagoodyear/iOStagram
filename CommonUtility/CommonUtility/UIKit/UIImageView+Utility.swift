@@ -22,4 +22,19 @@ public extension UIImageView {
             self.image = image
         }
     }
+    func setImage(image: UIImage?, clearIfNil: Bool = false) {
+        DispatchQueue.main.async {
+            self.image = image
+        }
+    }
+}
+
+public extension UIImage {
+    func resized(for size: CGSize) -> UIImage? {
+        let renderer = UIGraphicsImageRenderer(size: size)
+        
+        return renderer.image { (context) in
+            self.draw(in: CGRect(origin: .zero, size: size))
+        }.withRenderingMode(self.renderingMode)
+    }
 }

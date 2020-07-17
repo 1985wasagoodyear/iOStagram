@@ -11,6 +11,11 @@
 import Foundation
 import CommonUtility
 
+public extension NSNotification.Name {
+    static let refreshTokenExpired: NSNotification.Name = { NSNotification.Name.init("InstagramBD.refreshTokenExpired")
+    }()
+}
+
 extension Graph.Request {
     
     class RequestOperation<Response: Decodable>: NWMOperation {
@@ -83,10 +88,6 @@ extension Graph.Request {
                 defer {
                     self?.finalizeOperation(with: result)
                 }
-                print(data)
-                print(response)
-                print(error)
-                print(try? JSONSerialization.jsonObject(with: data!, options: .mutableLeaves))
                 if let error = error {
                     result = .failure(error)
                     return
@@ -140,6 +141,7 @@ extension Graph.Request {
                 let tokenFailure = resultFailure as? Graph.GraphError {
                 if case Graph.GraphError.expiredToken = tokenFailure {
                     print("TODO: - refresh token operation")
+                    NotificationCenter.default.post(name: .refreshTokenExpired, object: nil)
                     // if no refresh, prepare next operation
                     // queue.addOperation(RefreshTokenOperation())
                 } else if let copy = nextOperation() {

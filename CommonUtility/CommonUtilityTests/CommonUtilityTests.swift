@@ -38,3 +38,28 @@ class SafeSetTests: XCTestCase {
     }
 
 }
+
+
+class ThreadsafeArrayTests: XCTestCase {
+    
+    let array = ThreadsafeArray<Int>()
+    
+    func test_concurrent_insert() {
+        DispatchQueue.concurrentPerform(iterations: 100_000) {_ in
+            let random = Int.random(in: 1...10)
+            array.append(random)
+        }
+    }
+    
+    func test_concurrent_random() {
+        DispatchQueue.concurrentPerform(iterations: 100_000) { _ in
+            switch Bool.random() {
+            case true:
+                let random = Int.random(in: 1...10)
+                array.append(random)
+            case false:
+                array.removeAll()
+            }
+        }
+    }
+}

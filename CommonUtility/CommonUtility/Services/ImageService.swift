@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import UIKit
 
 final public class ImageDownloadService {
     
@@ -34,8 +35,8 @@ final public class ImageDownloadService {
             completion(Data(referencing: nsDat))
             return
         }
+        completion(nil)
         if enqueued.contains(url.absoluteString) {
-            completion(nil)
             return
         }
         enqueued.insert(url.absoluteString)
@@ -47,6 +48,42 @@ final public class ImageDownloadService {
             self.cache.setObject(NSData(data: dat), forKey: nsStr)
             self.enqueued.remove(url.absoluteString)
             completion(dat)
+        }.resume()
+    }
+}
+
+extension ImageDownloadService {
+    
+    
+    public func downloadImage(_ url: URL,
+                              forSize size: CGSize,
+                              _ completion: @escaping (UIImage?)->()) {
+        let nsStr = NSString(string: url.absoluteString + "\(size.width)x\(size.height)")
+        if let nsDat = cache.object(forKey: nsStr),
+            let image = UIImage(data: Data(referencing: nsDat)) {
+            completion(image)
+            return
+        }
+        completion(nil)
+        if enqueued.contains(url.absoluteString) {
+            return
+        }
+        enqueued.insert(url.absoluteString)
+        session.dataTask(with: url) { (data, _, _) in
+            guard let dat = data,
+                let image = UIImage(data: dat),
+                let resizedImage = image.resized(for: size),
+                let resizedData = resizedImage.pngData() else {
+                    completion(nil)
+                    return
+            }
+            print(resizedImage.size)
+            if Int(resizedImage.size.width) > 115 {
+                print("hold up")
+            }
+            self.cache.setObject(NSData(data: resizedData), forKey: nsStr)
+            self.enqueued.remove(url.absoluteString)
+            completion(resizedImage)
         }.resume()
     }
 }

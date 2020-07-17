@@ -81,7 +81,7 @@ open class NWMOperation: Operation {
     open func finish() {
         if isDebuggingEnabled, isExecuting == true {
             if let name = name {
-                print("\"\(name)\" Operation Started.")
+                print("\"\(name)\" Operation Completed.")
             }
         }
         _isExecuting = false

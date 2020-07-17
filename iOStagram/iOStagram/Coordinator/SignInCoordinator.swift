@@ -14,6 +14,22 @@ import InstagramBD
 final class SignInCoordinator {
     var window: UIWindow?
     
+    init() {
+        NotificationCenter
+            .default
+            .addObserver(self,
+                         selector: #selector(didSignOut),
+                         name: .refreshTokenExpired,
+                         object: nil)
+    }
+    
+    @objc func didSignOut() {
+        if let user = try? InstaUser(credentials: .secret) {
+            user.signout()
+        }
+        start()
+    }
+    
     func start() {
         assert(window != nil)
         guard let window = window else { return }
