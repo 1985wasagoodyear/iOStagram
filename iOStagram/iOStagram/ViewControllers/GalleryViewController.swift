@@ -9,7 +9,7 @@
 //
 
 import UIKit
-import CommonUtility
+import CommonUIUtilities
 import InstagramBD
 
 final class GalleryViewController: UIViewController {
@@ -36,7 +36,7 @@ final class GalleryViewController: UIViewController {
     }
     
     var currentOption: SegmentOptions = .mine
-    var user: InstaUser!
+    var user: InstaUser?
     var imageService = ImageDownloadService()
     
     override func viewDidLoad() {
@@ -61,15 +61,14 @@ final class GalleryViewController: UIViewController {
     
     // MARK: TODO - adjust fetch data functionality here...
     func fetchData() {
-        let url = URL(string: "https://www.instagram.com/enhanceitcommunity/")!
+        guard let url = URL(string: "https://www.instagram.com/enhanceitcommunity/") else {
+            fatalError("Broken static link for Enhance IT URL")
+        }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else {
-                print(response ?? error ?? "help")
-                return;
-            }
-            guard let string = String(data: data, encoding: .utf8) else {
-                print(response ?? error ?? "help")
-                return
+            guard let data = data,
+                let string = String(data: data, encoding: .utf8) else {
+                    // show some error here, instead?
+                    return
             }
             let links = Crawler.findLinks(from: string)
             self.items = links.filter { $0.absoluteString.contains("s150x150") }
@@ -77,7 +76,7 @@ final class GalleryViewController: UIViewController {
     }
     
     func fetchName() {
-        user.getName { name in
+        user?.getName { name in
             DispatchQueue.main.async {
                 let title = name ?? "Mine"
                 self.title = title
@@ -87,7 +86,7 @@ final class GalleryViewController: UIViewController {
     }
     
     func fetchMedia() {
-        user.getMedia { medias in
+        user?.getMedia { medias in
             self.items = medias
                 .ofType(type: .image)
                 .compactMap { $0.url }

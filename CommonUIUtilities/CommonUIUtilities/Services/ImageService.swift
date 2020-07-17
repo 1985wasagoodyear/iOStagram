@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import CommonUtility
 import UIKit
 
 final public class ImageDownloadService {
@@ -76,10 +77,6 @@ extension ImageDownloadService {
                 let resizedData = resizedImage.pngData() else {
                     completion(nil)
                     return
-            }
-            print(resizedImage.size)
-            if Int(resizedImage.size.width) > 115 {
-                print("hold up")
             }
             self.cache.setObject(NSData(data: resizedData), forKey: nsStr)
             self.enqueued.remove(url.absoluteString)

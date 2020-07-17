@@ -10,11 +10,6 @@
 		3F5301FC24C10AEB000B46DC /* NWMOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5301FB24C10AEB000B46DC /* NWMOperations.swift */; };
 		3F53020124C1564D000B46DC /* ThreadsafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F53020024C1564D000B46DC /* ThreadsafeArray.swift */; };
 		3F55B2D224B8EDFE001305AA /* CommonUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F55B2D024B8EDFE001305AA /* CommonUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F55B2DF24B8EE0F001305AA /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2DE24B8EE0F001305AA /* UIView+Utility.swift */; };
-		3FA8894E24BDECC400C70C87 /* Crawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8894D24BDECC400C70C87 /* Crawler.swift */; };
-		3FA8895324BE1D1A00C70C87 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8895224BE1D1A00C70C87 /* ImageService.swift */; };
-		3FA8895624BE264600C70C87 /* UIImageView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8895524BE264600C70C87 /* UIImageView+Utility.swift */; };
-		3FA8895A24BE266D00C70C87 /* UICollectionView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8895924BE266D00C70C87 /* UICollectionView+Utility.swift */; };
 		3FA8896324BE26B000C70C87 /* CommonUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8896224BE26B000C70C87 /* CommonUtilityTests.swift */; };
 		3FA8896524BE26B000C70C87 /* CommonUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F55B2CD24B8EDFE001305AA /* CommonUtility.framework */; };
 		3FA8896D24BE281E00C70C87 /* SafeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8896C24BE281E00C70C87 /* SafeSet.swift */; };
@@ -37,11 +32,6 @@
 		3F55B2CD24B8EDFE001305AA /* CommonUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F55B2D024B8EDFE001305AA /* CommonUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
 		3F55B2D124B8EDFE001305AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F55B2DE24B8EE0F001305AA /* UIView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
-		3FA8894D24BDECC400C70C87 /* Crawler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crawler.swift; sourceTree = "<group>"; };
-		3FA8895224BE1D1A00C70C87 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
-		3FA8895524BE264600C70C87 /* UIImageView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utility.swift"; sourceTree = "<group>"; };
-		3FA8895924BE266D00C70C87 /* UICollectionView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utility.swift"; sourceTree = "<group>"; };
 		3FA8896024BE26B000C70C87 /* CommonUtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonUtilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA8896224BE26B000C70C87 /* CommonUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtilityTests.swift; sourceTree = "<group>"; };
 		3FA8896424BE26B000C70C87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,33 +80,12 @@
 			isa = PBXGroup;
 			children = (
 				3F5301FB24C10AEB000B46DC /* NWMOperations.swift */,
-				3FA8894D24BDECC400C70C87 /* Crawler.swift */,
-				3FA8895B24BE268700C70C87 /* Services */,
-				3FA8895424BE263900C70C87 /* UIKit */,
-				3F55B2D024B8EDFE001305AA /* CommonUtility.h */,
-				3F55B2D124B8EDFE001305AA /* Info.plist */,
 				3FA8896C24BE281E00C70C87 /* SafeSet.swift */,
 				3F53020024C1564D000B46DC /* ThreadsafeArray.swift */,
+				3F55B2D024B8EDFE001305AA /* CommonUtility.h */,
+				3F55B2D124B8EDFE001305AA /* Info.plist */,
 			);
 			path = CommonUtility;
-			sourceTree = "<group>";
-		};
-		3FA8895424BE263900C70C87 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				3F55B2DE24B8EE0F001305AA /* UIView+Utility.swift */,
-				3FA8895524BE264600C70C87 /* UIImageView+Utility.swift */,
-				3FA8895924BE266D00C70C87 /* UICollectionView+Utility.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		3FA8895B24BE268700C70C87 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				3FA8895224BE1D1A00C70C87 /* ImageService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		3FA8896124BE26B000C70C87 /* CommonUtilityTests */ = {
@@ -241,12 +210,7 @@
 			files = (
 				3FA8896D24BE281E00C70C87 /* SafeSet.swift in Sources */,
 				3F5301FC24C10AEB000B46DC /* NWMOperations.swift in Sources */,
-				3FA8895A24BE266D00C70C87 /* UICollectionView+Utility.swift in Sources */,
-				3FA8894E24BDECC400C70C87 /* Crawler.swift in Sources */,
-				3F55B2DF24B8EE0F001305AA /* UIView+Utility.swift in Sources */,
-				3FA8895324BE1D1A00C70C87 /* ImageService.swift in Sources */,
 				3F53020124C1564D000B46DC /* ThreadsafeArray.swift in Sources */,
-				3FA8895624BE264600C70C87 /* UIImageView+Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

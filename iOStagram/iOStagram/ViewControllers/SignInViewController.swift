@@ -35,10 +35,6 @@ final class SignInViewController: UIViewController {
         present(loginVC, animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
 }
 
 // MARK: - Navigation Methods

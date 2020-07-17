@@ -11,7 +11,7 @@
 import UIKit
 import WebKit
 import BasicKeychain
-import CommonUtility
+import CommonUIUtilities
 
 public final class IGLoginViewController: UIViewController {
     

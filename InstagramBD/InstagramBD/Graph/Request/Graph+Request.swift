@@ -193,7 +193,7 @@ extension Graph.Request {
     func handle(error: Graph.GraphError) {
         switch error {
         case .expiredToken:
-            print("token has expired")
+            print("token has expired-control flow should never reach this point.")
         default:
             print(error)
         }

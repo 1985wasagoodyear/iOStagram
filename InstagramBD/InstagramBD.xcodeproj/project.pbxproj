@@ -20,8 +20,6 @@
 		3F67D05924BF3EB000027E77 /* Graph+Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D05824BF3EB000027E77 /* Graph+Failure.swift */; };
 		3F67D05C24BF3EC700027E77 /* Graph+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D05B24BF3EC700027E77 /* Graph+Response.swift */; };
 		3F67D05F24BF3F6C00027E77 /* Graph+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D05E24BF3F6C00027E77 /* Graph+Request.swift */; };
-		3FD7E74624AA4FBA006351E4 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8374924AA419F0064F876 /* OAuthSwift.framework */; };
-		3FD7E74724AA4FBA006351E4 /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8374924AA419F0064F876 /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FD7E74D24AA5A48006351E4 /* API+Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7E74C24AA5A48006351E4 /* API+Credentials.swift */; };
 		3FE836FD24AA2EC80064F876 /* InstagramBD.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE836FB24AA2EC80064F876 /* InstagramBD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FE8372D24AA32DC0064F876 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8372C24AA32DC0064F876 /* API.swift */; };
@@ -39,20 +37,6 @@
 			remoteInfo = InstagramBD;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		3FD7E74824AA4FBB006351E4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3FD7E74724AA4FBA006351E4 /* OAuthSwift.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3F24B4EE24B8C92300D4CE10 /* API+AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+AccessToken.swift"; sourceTree = "<group>"; };
@@ -85,7 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FD7E74624AA4FBA006351E4 /* OAuthSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +246,6 @@
 				3FE836F424AA2EC80064F876 /* Sources */,
 				3FE836F524AA2EC80064F876 /* Frameworks */,
 				3FE836F624AA2EC80064F876 /* Resources */,
-				3FD7E74824AA4FBB006351E4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -14,9 +14,10 @@
 		3FA40ECA24B8E22C00B5712F /* BasicKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA40EC924B8E22C00B5712F /* BasicKeychain.framework */; };
 		3FA40ECB24B8E22C00B5712F /* BasicKeychain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA40EC924B8E22C00B5712F /* BasicKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FA40ECD24B8E55200B5712F /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA40ECC24B8E55200B5712F /* GalleryViewController.swift */; };
-		3FA8895024BE16BD00C70C87 /* CommonUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA8894F24BE16BD00C70C87 /* CommonUtility.framework */; };
-		3FA8895124BE16BD00C70C87 /* CommonUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA8894F24BE16BD00C70C87 /* CommonUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FD7E74B24AA595E006351E4 /* API+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7E74A24AA595E006351E4 /* API+Constants.swift */; };
+		3FE73B1524C1DB34006A157E /* Crawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE73B1424C1DB34006A157E /* Crawler.swift */; };
+		3FE73B4224C1DC5D006A157E /* CommonUIUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE73B4124C1DC5D006A157E /* CommonUIUtilities.framework */; };
+		3FE73B4324C1DC5D006A157E /* CommonUIUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE73B4124C1DC5D006A157E /* CommonUIUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FE836D424AA2E8A0064F876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE836D224AA2E8A0064F876 /* Main.storyboard */; };
 		3FE836D624AA2E8E0064F876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FE836D524AA2E8E0064F876 /* Assets.xcassets */; };
 		3FE836D924AA2E8E0064F876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE836D724AA2E8E0064F876 /* LaunchScreen.storyboard */; };
@@ -42,8 +43,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3FA8895124BE16BD00C70C87 /* CommonUtility.framework in Embed Frameworks */,
 				3FE8374F24AA48AC0064F876 /* InstagramBD.framework in Embed Frameworks */,
+				3FE73B4324C1DC5D006A157E /* CommonUIUtilities.framework in Embed Frameworks */,
 				3FA40ECB24B8E22C00B5712F /* BasicKeychain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -60,6 +61,8 @@
 		3FA40ECC24B8E55200B5712F /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		3FA8894F24BE16BD00C70C87 /* CommonUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD7E74A24AA595E006351E4 /* API+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Constants.swift"; sourceTree = "<group>"; };
+		3FE73B1424C1DB34006A157E /* Crawler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crawler.swift; sourceTree = "<group>"; };
+		3FE73B4124C1DC5D006A157E /* CommonUIUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonUIUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE836C924AA2E8A0064F876 /* iOStagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOStagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE836D324AA2E8A0064F876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FE836D524AA2E8E0064F876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,8 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FA8895024BE16BD00C70C87 /* CommonUtility.framework in Frameworks */,
 				3FE8374E24AA48AC0064F876 /* InstagramBD.framework in Frameworks */,
+				3FE73B4224C1DC5D006A157E /* CommonUIUtilities.framework in Frameworks */,
 				3FA40ECA24B8E22C00B5712F /* BasicKeychain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +158,7 @@
 		3FE836CB24AA2E8A0064F876 /* iOStagram */ = {
 			isa = PBXGroup;
 			children = (
+				3FE73B1424C1DB34006A157E /* Crawler.swift */,
 				3FA40EC624B8E21100B5712F /* Coordinator */,
 				3F193BEA24B8B14400D53830 /* Custom Views */,
 				3FD7E74924AA5950006351E4 /* Secret */,
@@ -171,6 +175,7 @@
 		3FE8370B24AA2FC00064F876 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3FE73B4124C1DC5D006A157E /* CommonUIUtilities.framework */,
 				3FA8894F24BE16BD00C70C87 /* CommonUtility.framework */,
 				3FA40EC924B8E22C00B5712F /* BasicKeychain.framework */,
 				3FE8374D24AA48AC0064F876 /* InstagramBD.framework */,
@@ -281,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE73B1524C1DB34006A157E /* Crawler.swift in Sources */,
 				3FA40EC524B8E04900B5712F /* SignInViewController.swift in Sources */,
 				3FD7E74B24AA595E006351E4 /* API+Constants.swift in Sources */,
 				3FA40EC824B8E21900B5712F /* SignInCoordinator.swift in Sources */,
