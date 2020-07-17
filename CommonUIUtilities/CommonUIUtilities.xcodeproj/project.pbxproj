@@ -11,7 +11,6 @@
 		3FE73B4A24C1DCBA006A157E /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE73B4524C1DCBA006A157E /* ImageService.swift */; };
 		3FE73B4B24C1DCBA006A157E /* UICollectionView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE73B4724C1DCBA006A157E /* UICollectionView+Utility.swift */; };
 		3FE73B4C24C1DCBA006A157E /* UIImageView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE73B4824C1DCBA006A157E /* UIImageView+Utility.swift */; };
-		3FE73B4D24C1DCBA006A157E /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE73B4924C1DCBA006A157E /* UIView+Utility.swift */; };
 		3FE73B5024C1DD28006A157E /* CommonUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE73B4F24C1DD28006A157E /* CommonUtility.framework */; };
 		3FE73B5124C1DD28006A157E /* CommonUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE73B4F24C1DD28006A157E /* CommonUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -37,7 +36,6 @@
 		3FE73B4524C1DCBA006A157E /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		3FE73B4724C1DCBA006A157E /* UICollectionView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utility.swift"; sourceTree = "<group>"; };
 		3FE73B4824C1DCBA006A157E /* UIImageView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utility.swift"; sourceTree = "<group>"; };
-		3FE73B4924C1DCBA006A157E /* UIView+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
 		3FE73B4F24C1DD28006A157E /* CommonUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,7 +92,6 @@
 			children = (
 				3FE73B4724C1DCBA006A157E /* UICollectionView+Utility.swift */,
 				3FE73B4824C1DCBA006A157E /* UIImageView+Utility.swift */,
-				3FE73B4924C1DCBA006A157E /* UIView+Utility.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -190,7 +187,6 @@
 				3FE73B4C24C1DCBA006A157E /* UIImageView+Utility.swift in Sources */,
 				3FE73B4A24C1DCBA006A157E /* ImageService.swift in Sources */,
 				3FE73B4B24C1DCBA006A157E /* UICollectionView+Utility.swift in Sources */,
-				3FE73B4D24C1DCBA006A157E /* UIView+Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

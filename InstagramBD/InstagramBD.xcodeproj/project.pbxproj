@@ -21,6 +21,10 @@
 		3F67D05C24BF3EC700027E77 /* Graph+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D05B24BF3EC700027E77 /* Graph+Response.swift */; };
 		3F67D05F24BF3F6C00027E77 /* Graph+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D05E24BF3F6C00027E77 /* Graph+Request.swift */; };
 		3FD7E74D24AA5A48006351E4 /* API+Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7E74C24AA5A48006351E4 /* API+Credentials.swift */; };
+		3FE73B7B24C2074F006A157E /* BasicKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE73B7924C2074F006A157E /* BasicKeychain.framework */; };
+		3FE73B7C24C2074F006A157E /* BasicKeychain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE73B7924C2074F006A157E /* BasicKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3FE73B7D24C2074F006A157E /* CommonUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE73B7A24C2074F006A157E /* CommonUtility.framework */; };
+		3FE73B7E24C2074F006A157E /* CommonUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE73B7A24C2074F006A157E /* CommonUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FE836FD24AA2EC80064F876 /* InstagramBD.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE836FB24AA2EC80064F876 /* InstagramBD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FE8372D24AA32DC0064F876 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8372C24AA32DC0064F876 /* API.swift */; };
 		3FE8372F24AA32F60064F876 /* API+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8372E24AA32F60064F876 /* API+Login.swift */; };
@@ -38,6 +42,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3FE73B7F24C2074F006A157E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3FE73B7E24C2074F006A157E /* CommonUtility.framework in Embed Frameworks */,
+				3FE73B7C24C2074F006A157E /* BasicKeychain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3F24B4EE24B8C92300D4CE10 /* API+AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+AccessToken.swift"; sourceTree = "<group>"; };
 		3F5301F524C0F6EF000B46DC /* API+Authorize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Authorize.swift"; sourceTree = "<group>"; };
@@ -53,6 +72,8 @@
 		3F67D05B24BF3EC700027E77 /* Graph+Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Graph+Response.swift"; sourceTree = "<group>"; };
 		3F67D05E24BF3F6C00027E77 /* Graph+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Graph+Request.swift"; sourceTree = "<group>"; };
 		3FD7E74C24AA5A48006351E4 /* API+Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Credentials.swift"; sourceTree = "<group>"; };
+		3FE73B7924C2074F006A157E /* BasicKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BasicKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FE73B7A24C2074F006A157E /* CommonUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE836F824AA2EC80064F876 /* InstagramBD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstagramBD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE836FB24AA2EC80064F876 /* InstagramBD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstagramBD.h; sourceTree = "<group>"; };
 		3FE836FC24AA2EC80064F876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE73B7D24C2074F006A157E /* CommonUtility.framework in Frameworks */,
+				3FE73B7B24C2074F006A157E /* BasicKeychain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +242,8 @@
 		3FE8374224AA3FB80064F876 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3FE73B7924C2074F006A157E /* BasicKeychain.framework */,
+				3FE73B7A24C2074F006A157E /* CommonUtility.framework */,
 				3FE8374924AA419F0064F876 /* OAuthSwift.framework */,
 			);
 			name = Frameworks;
@@ -246,6 +271,7 @@
 				3FE836F424AA2EC80064F876 /* Sources */,
 				3FE836F524AA2EC80064F876 /* Frameworks */,
 				3FE836F624AA2EC80064F876 /* Resources */,
+				3FE73B7F24C2074F006A157E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

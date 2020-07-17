@@ -11,7 +11,34 @@
 import UIKit
 import WebKit
 import BasicKeychain
-import CommonUIUtilities
+
+public extension UIView {
+    func fillIn(_ view: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(self)
+        let guide: UILayoutGuide
+        if #available(iOS 11.0, *) {
+            guide = view.safeAreaLayoutGuide
+        } else {
+            guide = view.layoutMarginsGuide
+        }
+        let constraints = [
+            leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+            topAnchor.constraint(equalTo: guide.topAnchor),
+            bottomAnchor.constraint(equalTo: guide.bottomAnchor)
+        ]
+        NSLayoutConstraint.activate(constraints)
+    }
+    
+    func roundify(_ radius: CGFloat = 16.0) {
+        let layer = self.layer
+        layer.cornerRadius = radius
+        layer.masksToBounds = true
+    }
+    
+}
+
 
 public final class IGLoginViewController: UIViewController {
     
