@@ -113,6 +113,13 @@ InstagramBD is presently dependent on two other frameworks in this repository:
 
 In the future, these may be collapsed into a single framework or made more-easily distributable.
 
+### Option 1: Cocoapods
+
+```
+pod 'CommonUtility', :git => 'https://github.com/1985wasagoodyear/iOStagram.git'
+pod 'BasicKeychain', :git => 'https://github.com/1985wasagoodyear/iOStagram.git'
+pod 'InstagramBD', :git => 'https://github.com/1985wasagoodyear/iOStagram.git'
+```
 
 ## In Progress / Future Steps:
 
