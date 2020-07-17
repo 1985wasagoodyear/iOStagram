@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F5301FC24C10AEB000B46DC /* NWMOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5301FB24C10AEB000B46DC /* NWMOperations.swift */; };
 		3F55B2D224B8EDFE001305AA /* CommonUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F55B2D024B8EDFE001305AA /* CommonUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F55B2DF24B8EE0F001305AA /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2DE24B8EE0F001305AA /* UIView+Utility.swift */; };
 		3FA8894E24BDECC400C70C87 /* Crawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8894D24BDECC400C70C87 /* Crawler.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F5301FB24C10AEB000B46DC /* NWMOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWMOperations.swift; sourceTree = "<group>"; };
 		3F55B2CD24B8EDFE001305AA /* CommonUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F55B2D024B8EDFE001305AA /* CommonUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
 		3F55B2D124B8EDFE001305AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		3F55B2CF24B8EDFE001305AA /* CommonUtility */ = {
 			isa = PBXGroup;
 			children = (
+				3F5301FB24C10AEB000B46DC /* NWMOperations.swift */,
 				3FA8894D24BDECC400C70C87 /* Crawler.swift */,
 				3FA8895B24BE268700C70C87 /* Services */,
 				3FA8895424BE263900C70C87 /* UIKit */,
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FA8896D24BE281E00C70C87 /* SafeSet.swift in Sources */,
+				3F5301FC24C10AEB000B46DC /* NWMOperations.swift in Sources */,
 				3FA8895A24BE266D00C70C87 /* UICollectionView+Utility.swift in Sources */,
 				3FA8894E24BDECC400C70C87 /* Crawler.swift in Sources */,
 				3F55B2DF24B8EE0F001305AA /* UIView+Utility.swift in Sources */,

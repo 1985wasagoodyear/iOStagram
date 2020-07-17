@@ -19,5 +19,14 @@ extension Graph.Response {
         let id: String
         let username: String
     }
+    
+    struct MediaContainer: Decodable {
+        let data: [MediaInfo]
+    }
+    
+    struct MediaInfo: Decodable {
+        let id: String
+        let info: String?
+    }
 }
 

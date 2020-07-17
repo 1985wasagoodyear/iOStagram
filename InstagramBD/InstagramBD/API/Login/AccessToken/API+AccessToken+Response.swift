@@ -19,6 +19,5 @@ extension API.Login.AccessToken {
             case userId = "user_id"
             case accessToken = "access_token"
         }
-        
     }
 }

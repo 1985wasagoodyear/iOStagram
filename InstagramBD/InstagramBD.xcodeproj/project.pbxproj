@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3F24B4EF24B8C92300D4CE10 /* API+AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24B4EE24B8C92300D4CE10 /* API+AccessToken.swift */; };
+		3F5301F624C0F6EF000B46DC /* API+Authorize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5301F524C0F6EF000B46DC /* API+Authorize.swift */; };
+		3F5301FA24C0FAE7000B46DC /* Graph+GraphError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5301F924C0FAE7000B46DC /* Graph+GraphError.swift */; };
+		3F5301FF24C1448E000B46DC /* RequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5301FE24C1448E000B46DC /* RequestOperation.swift */; };
 		3F55B2C224B8EDDA001305AA /* IGLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2C124B8EDDA001305AA /* IGLoginViewController.swift */; };
-		3F55B2E624B8F7EF001305AA /* API+Login+Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2E524B8F7EF001305AA /* API+Login+Deprecated.swift */; };
 		3F55B2EC24B903B0001305AA /* InstaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2EB24B903B0001305AA /* InstaUser.swift */; };
 		3F55B2EF24B90446001305AA /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2EE24B90446001305AA /* Graph.swift */; };
-		3F55B2F124B909C1001305AA /* API+AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2F024B909C1001305AA /* API+AccessTokenResponse.swift */; };
+		3F55B2F124B909C1001305AA /* API+AccessToken+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F55B2F024B909C1001305AA /* API+AccessToken+Response.swift */; };
 		3F67D05524BF3A6F00027E77 /* InstagramGraphAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D05424BF3A6F00027E77 /* InstagramGraphAPITests.swift */; };
 		3F67D05624BF3D2A00027E77 /* ExpiredTokenResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F67D05324BF3A5200027E77 /* ExpiredTokenResponse.json */; };
 		3F67D05924BF3EB000027E77 /* Graph+Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67D05824BF3EB000027E77 /* Graph+Failure.swift */; };
@@ -24,7 +26,6 @@
 		3FE836FD24AA2EC80064F876 /* InstagramBD.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE836FB24AA2EC80064F876 /* InstagramBD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FE8372D24AA32DC0064F876 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8372C24AA32DC0064F876 /* API.swift */; };
 		3FE8372F24AA32F60064F876 /* API+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8372E24AA32F60064F876 /* API+Login.swift */; };
-		3FE8373124AA32FD0064F876 /* API+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8373024AA32FD0064F876 /* API+Request.swift */; };
 		3FE8373924AA34350064F876 /* InstagramBDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8373824AA34350064F876 /* InstagramBDTests.swift */; };
 		3FE8373B24AA34350064F876 /* InstagramBD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE836F824AA2EC80064F876 /* InstagramBD.framework */; };
 /* End PBXBuildFile section */
@@ -55,11 +56,13 @@
 
 /* Begin PBXFileReference section */
 		3F24B4EE24B8C92300D4CE10 /* API+AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+AccessToken.swift"; sourceTree = "<group>"; };
+		3F5301F524C0F6EF000B46DC /* API+Authorize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Authorize.swift"; sourceTree = "<group>"; };
+		3F5301F924C0FAE7000B46DC /* Graph+GraphError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Graph+GraphError.swift"; sourceTree = "<group>"; };
+		3F5301FE24C1448E000B46DC /* RequestOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOperation.swift; sourceTree = "<group>"; };
 		3F55B2C124B8EDDA001305AA /* IGLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGLoginViewController.swift; sourceTree = "<group>"; };
-		3F55B2E524B8F7EF001305AA /* API+Login+Deprecated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Login+Deprecated.swift"; sourceTree = "<group>"; };
 		3F55B2EB24B903B0001305AA /* InstaUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaUser.swift; sourceTree = "<group>"; };
 		3F55B2EE24B90446001305AA /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
-		3F55B2F024B909C1001305AA /* API+AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+AccessTokenResponse.swift"; sourceTree = "<group>"; };
+		3F55B2F024B909C1001305AA /* API+AccessToken+Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+AccessToken+Response.swift"; sourceTree = "<group>"; };
 		3F67D05324BF3A5200027E77 /* ExpiredTokenResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ExpiredTokenResponse.json; path = ../../CommonUtility/CommonUtilityTests/ExpiredTokenResponse.json; sourceTree = "<group>"; };
 		3F67D05424BF3A6F00027E77 /* InstagramGraphAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramGraphAPITests.swift; sourceTree = "<group>"; };
 		3F67D05824BF3EB000027E77 /* Graph+Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Graph+Failure.swift"; sourceTree = "<group>"; };
@@ -71,7 +74,6 @@
 		3FE836FC24AA2EC80064F876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FE8372C24AA32DC0064F876 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3FE8372E24AA32F60064F876 /* API+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Login.swift"; sourceTree = "<group>"; };
-		3FE8373024AA32FD0064F876 /* API+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Request.swift"; sourceTree = "<group>"; };
 		3FE8373624AA34350064F876 /* InstagramBDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramBDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE8373824AA34350064F876 /* InstagramBDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramBDTests.swift; sourceTree = "<group>"; };
 		3FE8373A24AA34350064F876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,7 +106,7 @@
 				3F55B2C124B8EDDA001305AA /* IGLoginViewController.swift */,
 				3FE8372E24AA32F60064F876 /* API+Login.swift */,
 				3F24B4ED24B8C91800D4CE10 /* AccessToken */,
-				3F55B2E524B8F7EF001305AA /* API+Login+Deprecated.swift */,
+				3F5301F424C0F6CF000B46DC /* Authorize */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -113,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				3F24B4EE24B8C92300D4CE10 /* API+AccessToken.swift */,
-				3F55B2F024B909C1001305AA /* API+AccessTokenResponse.swift */,
+				3F55B2F024B909C1001305AA /* API+AccessToken+Response.swift */,
 			);
 			path = AccessToken;
 			sourceTree = "<group>";
@@ -121,9 +123,16 @@
 		3F24B4F024B8C94300D4CE10 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				3FE8373024AA32FD0064F876 /* API+Request.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		3F5301F424C0F6CF000B46DC /* Authorize */ = {
+			isa = PBXGroup;
+			children = (
+				3F5301F524C0F6EF000B46DC /* API+Authorize.swift */,
+			);
+			path = Authorize;
 			sourceTree = "<group>";
 		};
 		3F55B2EA24B903A1001305AA /* InstaUser */ = {
@@ -149,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				3F67D05824BF3EB000027E77 /* Graph+Failure.swift */,
+				3F5301F924C0FAE7000B46DC /* Graph+GraphError.swift */,
 			);
 			path = Failure;
 			sourceTree = "<group>";
@@ -165,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				3F67D05E24BF3F6C00027E77 /* Graph+Request.swift */,
+				3F5301FE24C1448E000B46DC /* RequestOperation.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -346,15 +357,16 @@
 				3F24B4EF24B8C92300D4CE10 /* API+AccessToken.swift in Sources */,
 				3FE8372F24AA32F60064F876 /* API+Login.swift in Sources */,
 				3F67D05C24BF3EC700027E77 /* Graph+Response.swift in Sources */,
-				3F55B2F124B909C1001305AA /* API+AccessTokenResponse.swift in Sources */,
+				3F5301FA24C0FAE7000B46DC /* Graph+GraphError.swift in Sources */,
+				3F55B2F124B909C1001305AA /* API+AccessToken+Response.swift in Sources */,
 				3FE8372D24AA32DC0064F876 /* API.swift in Sources */,
-				3FE8373124AA32FD0064F876 /* API+Request.swift in Sources */,
+				3F5301F624C0F6EF000B46DC /* API+Authorize.swift in Sources */,
 				3F55B2C224B8EDDA001305AA /* IGLoginViewController.swift in Sources */,
 				3F67D05924BF3EB000027E77 /* Graph+Failure.swift in Sources */,
 				3F67D05F24BF3F6C00027E77 /* Graph+Request.swift in Sources */,
 				3F55B2EF24B90446001305AA /* Graph.swift in Sources */,
 				3FD7E74D24AA5A48006351E4 /* API+Credentials.swift in Sources */,
-				3F55B2E624B8F7EF001305AA /* API+Login+Deprecated.swift in Sources */,
+				3F5301FF24C1448E000B46DC /* RequestOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

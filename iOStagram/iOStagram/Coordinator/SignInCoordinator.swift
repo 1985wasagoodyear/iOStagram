@@ -23,7 +23,7 @@ final class SignInCoordinator {
     
     func createInitialViewController() -> UIViewController {
         let initialVC: UIViewController
-        if let user = try? InstaUser() {
+        if let user = try? InstaUser(credentials: .secret) {
             let signedInVC: GalleryViewController = Storyboards.main.instantiate(named: "GalleryViewController")
             signedInVC.user = user
             initialVC = signedInVC

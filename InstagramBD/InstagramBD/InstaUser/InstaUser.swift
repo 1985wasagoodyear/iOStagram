@@ -16,6 +16,7 @@ public class InstaUser {
     public private(set) var name: String?
     
     public let userId: String
+    let credentials: API.Credentials
     
     public var token: String? {
         try? InstaUser.accessTokenKeychain().get()
@@ -25,19 +26,22 @@ public class InstaUser {
         Graph.Request(user: self)
     }()
     
-    internal init(_ apiResponse: API.Login.AccessToken.Response) throws {
+    internal init(_ apiResponse: API.Login.AccessToken.Response,
+                  credentials: API.Credentials) throws {
         try InstaUser.accessTokenKeychain().set(apiResponse.accessToken)
         let userId = String(apiResponse.userId)
-        self.userId = userId
         try InstaUser.userIdKeychain().set(userId)
+        self.userId = userId
+        self.credentials = credentials
     }
     
-    public init() throws {
+    public init(credentials: API.Credentials) throws {
         guard let userId = try InstaUser.userIdKeychain().get() else {
             // do something else here?
             throw NSError(domain: "InstaUser credentials not found", code: 1, userInfo: nil)
         }
         self.userId = userId
+        self.credentials = credentials
     }
 }
 
@@ -49,7 +53,11 @@ extension InstaUser {
     static func userIdKeychain() -> BasicKeychain {
         BasicKeychain(name: "yu.iOStagram",
                       service: "userId")
-
+    }
+    
+    static func setBadTokens() {
+        try? accessTokenKeychain().set("banana")
+        try? userIdKeychain().set("banana")
     }
 }
 
@@ -62,6 +70,22 @@ public extension InstaUser {
             return
         }
         request.userName { result in
+            switch result {
+            case .success(let name):
+                self.name = name
+                completion(name)
+            case .failure(let error):
+                fatalError(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getMedia(_ completion: @escaping (String) -> Void) {
+        if let name = name {
+            completion(name)
+            return
+        }
+        request.media { result in
             switch result {
             case .success(let name):
                 self.name = name

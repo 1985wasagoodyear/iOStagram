@@ -20,25 +20,10 @@ extension Dictionary where Key == String, Value == String {
 }
 
 extension API {
-    public enum Login { }
+    public enum Login {}
 }
 
 extension API.Login {
     enum AccessToken { }
     enum Authorize { }
-}
-
-extension API.Login.Authorize {
-    
-    public static func url(clientId: String,
-                           redirectUri: String,
-                           scope: String,
-                           responseType: String) -> URL? {
-        let urlString = API.root + "/oauth/authorize?"
-            + "client_id=" + clientId
-            + "&redirect_uri=" + redirectUri
-            + "&scope=" + scope
-            + "&response_type=" + responseType
-        return URL(string: urlString)
-    }
 }

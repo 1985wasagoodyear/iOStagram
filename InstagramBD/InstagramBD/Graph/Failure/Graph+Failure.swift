@@ -32,21 +32,4 @@ extension Graph {
     }
 }
 
-public extension Graph {
-    enum GraphError: Error {
-        case noToken
-        case noData
-        case badUrl(String)
-        case expiredToken
-        case unknown
-        
-        init(response: RequestFailure) {
-            switch response.details.code {
-            case 190:
-                self = .expiredToken
-            default:
-                self = .unknown
-            }
-        }
-    }
-}
+

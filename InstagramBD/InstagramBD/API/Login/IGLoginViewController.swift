@@ -52,6 +52,7 @@ public final class IGLoginViewController: UIViewController {
         }
         webView.load(URLRequest(url: url))
     }
+    
 
 }
 
@@ -70,23 +71,24 @@ extension IGLoginViewController: WKNavigationDelegate {
 
     func fetchAccessToken(redirectRequest: URLRequest) {
         credentials.session.dataTask(with: redirectRequest) { [weak self] data, response, error in
-            let completion = self?.completion
+            guard let weakSelf = self else { return }
+            let completion = weakSelf.completion
             if let error = error {
-                completion?(.failure(error))
+                completion(.failure(error))
                 return
             }
             guard let data = data else {
-                completion?(.failure(AccessTokenError.noData))
+                completion(.failure(AccessTokenError.noData))
                 return
             }
             do {
                 let decoder = JSONDecoder()
-                let response =  try decoder.decode(API.Login.AccessToken.Response.self,
-                                          from: data)
-                let user = try InstaUser(response)
-                completion?(.success(user))
+                let response = try decoder.decode(API.Login.AccessToken.Response.self,
+                                                  from: data)
+                let user = try InstaUser(response, credentials: weakSelf.credentials)
+                completion(.success(user))
             } catch {
-                completion?(.failure(error))
+                completion(.failure(error))
             }
         }.resume()
     }

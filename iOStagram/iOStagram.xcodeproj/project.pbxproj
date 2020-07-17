@@ -20,7 +20,6 @@
 		3FE836D424AA2E8A0064F876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE836D224AA2E8A0064F876 /* Main.storyboard */; };
 		3FE836D624AA2E8E0064F876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FE836D524AA2E8E0064F876 /* Assets.xcassets */; };
 		3FE836D924AA2E8E0064F876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE836D724AA2E8E0064F876 /* LaunchScreen.storyboard */; };
-		3FE836E424AA2E8E0064F876 /* iOStagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE836E324AA2E8E0064F876 /* iOStagramTests.swift */; };
 		3FE8370A24AA2FA50064F876 /* ISAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8370924AA2FA50064F876 /* ISAppDelegate.swift */; };
 		3FE8374E24AA48AC0064F876 /* InstagramBD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8374D24AA48AC0064F876 /* InstagramBD.framework */; };
 		3FE8374F24AA48AC0064F876 /* InstagramBD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE8374D24AA48AC0064F876 /* InstagramBD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -67,8 +66,6 @@
 		3FE836D824AA2E8E0064F876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FE836DA24AA2E8E0064F876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FE836DF24AA2E8E0064F876 /* iOStagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOStagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FE836E324AA2E8E0064F876 /* iOStagramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOStagramTests.swift; sourceTree = "<group>"; };
-		3FE836E524AA2E8E0064F876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FE8370924AA2FA50064F876 /* ISAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISAppDelegate.swift; sourceTree = "<group>"; };
 		3FE8370C24AA2FC00064F876 /* InstagramBD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InstagramBD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE8374D24AA48AC0064F876 /* InstagramBD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InstagramBD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				3FE836CB24AA2E8A0064F876 /* iOStagram */,
-				3FE836E224AA2E8E0064F876 /* iOStagramTests */,
 				3FE836CA24AA2E8A0064F876 /* Products */,
 				3FE8370B24AA2FC00064F876 /* Frameworks */,
 			);
@@ -170,15 +166,6 @@
 				3FE836DA24AA2E8E0064F876 /* Info.plist */,
 			);
 			path = iOStagram;
-			sourceTree = "<group>";
-		};
-		3FE836E224AA2E8E0064F876 /* iOStagramTests */ = {
-			isa = PBXGroup;
-			children = (
-				3FE836E324AA2E8E0064F876 /* iOStagramTests.swift */,
-				3FE836E524AA2E8E0064F876 /* Info.plist */,
-			);
-			path = iOStagramTests;
 			sourceTree = "<group>";
 		};
 		3FE8370B24AA2FC00064F876 /* Frameworks */ = {
@@ -308,7 +295,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FE836E424AA2E8E0064F876 /* iOStagramTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

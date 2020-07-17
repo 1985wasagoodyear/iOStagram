@@ -69,7 +69,7 @@ final class GalleryViewController: UIViewController {
     
     func fetchName() {
         // fetch data for the option
-        user.getName { name in
+        user.getMedia { name in
             DispatchQueue.main.async {
                 self.title = name
                 self.optionSegmentedControl.setTitle(name, forSegmentAt: 0)
