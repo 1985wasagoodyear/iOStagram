@@ -89,7 +89,7 @@ final class GalleryViewController: UIViewController {
     func fetchMedia() {
         user.getMedia { medias in
             self.items = medias
-                .getImageMedias()
+                .ofType(type: .image)
                 .compactMap { $0.url }
         }
     }

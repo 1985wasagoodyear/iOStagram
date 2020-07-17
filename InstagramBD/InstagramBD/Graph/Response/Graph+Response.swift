@@ -31,8 +31,10 @@ extension Graph.Response {
     
 }
 
-enum MediaTypes: String {
+public enum MediaTypes: String, CaseIterable {
     case image = "IMAGE"
+    case video = "VIDEO"
+    case carouselAlbum = "CAROUSEL_ALBUM"
 }
 
 public struct MediaInfo: Decodable {
@@ -55,7 +57,7 @@ public extension MediaInfo {
 }
 
 public extension Array where Element == MediaInfo {
-    func getImageMedias() -> [MediaInfo] {
-        return self.filter { MediaTypes(rawValue: $0.type) != nil }
+    func ofType(type: MediaTypes) -> [MediaInfo] {
+        return self.filter { $0.type == type.rawValue }
     }
 }
