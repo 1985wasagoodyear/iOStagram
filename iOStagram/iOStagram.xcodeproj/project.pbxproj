@@ -60,7 +60,7 @@
 		3FA40ECC24B8E55200B5712F /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		3FA8894F24BE16BD00C70C87 /* CommonUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD7E74A24AA595E006351E4 /* API+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Constants.swift"; sourceTree = "<group>"; };
-		3FE836C924AA2E8A0064F876 /* iOStaBurbn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOStaBurbn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FE836C924AA2E8A0064F876 /* iOStagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOStagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE836D324AA2E8A0064F876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FE836D524AA2E8E0064F876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FE836D824AA2E8E0064F876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		3FE836CA24AA2E8A0064F876 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3FE836C924AA2E8A0064F876 /* iOStaBurbn.app */,
+				3FE836C924AA2E8A0064F876 /* iOStagram.app */,
 				3FE836DF24AA2E8E0064F876 /* iOStagramTests.xctest */,
 			);
 			name = Products;
@@ -197,7 +197,7 @@
 			);
 			name = iOStagram;
 			productName = iOStagram;
-			productReference = 3FE836C924AA2E8A0064F876 /* iOStaBurbn.app */;
+			productReference = 3FE836C924AA2E8A0064F876 /* iOStagram.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3FE836DE24AA2E8E0064F876 /* iOStagramTests */ = {
@@ -455,7 +455,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yu.iOStagram;
-				PRODUCT_NAME = iOStaBurbn;
+				PRODUCT_NAME = iOStagram;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,7 +474,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yu.iOStagram;
-				PRODUCT_NAME = iOStaBurbn;
+				PRODUCT_NAME = iOStagram;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
